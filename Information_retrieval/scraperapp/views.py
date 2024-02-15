@@ -17,4 +17,11 @@ def scrape_and_index(request):
     publications = crawl_and_scrape(base_url)
     ix = get_index()
     index_publications(ix, publications)
-    return render(request, 'scraperapp/index.html', {'message': 'Scraping and indexing completed successfully.'})
+    form = SearchForm()
+    if request.method == 'POST':
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            query = form.cleaned_data['query']
+            results = search_index(query)
+            return render(request, 'scraperapp/search_results.html', {'results': results})
+    return render(request, 'scraperapp/index.html', {'form': form, 'message': 'Scraping and indexing completed successfully.'})

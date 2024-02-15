@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'scraperapp',
+    'document_clustering',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

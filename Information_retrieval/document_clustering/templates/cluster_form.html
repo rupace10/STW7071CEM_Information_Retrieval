@@ -1,0 +1,9 @@
+<form method="post">
+    {% csrf_token %}
+    <label for="new_document">Enter a new document:</label><br>
+    <textarea id="new_document" name="new_document"></textarea><br><br>
+    <input type="submit" value="Submit">
+</form>
+<br>
+<br>
+<a href="{% url 'scraperapp:index' %}"><button>Go to Home Page</button></a>

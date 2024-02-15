@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cluster Result</title>
+</head>
+<body>
+    <h1>Cluster Result</h1>
+    <p>The document '{{ new_document }}' belongs to cluster {{ cluster }}.</p>
+
+    <!-- Button to go back to the document clustering form -->
+    <a href="{% url 'document_clustering:cluster_form' %}"><button>Back to Document Clustering Form</button></a>
+    
+    <!-- Button to go to the home page -->
+    <a href="{% url 'scraperapp:index' %}"><button>Go to Home Page</button></a>
+</body>
+</html>

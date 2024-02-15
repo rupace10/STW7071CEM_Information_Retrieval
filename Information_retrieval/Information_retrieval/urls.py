@@ -21,4 +21,5 @@ urlpatterns = [
     # path('admin/', admin.site.urls),
     path('', include('scraperapp.urls')),
     # path('scraper/', include('scraperapp.urls')),
+    path('document_clustering/', include('document_clustering.urls')),
 ]

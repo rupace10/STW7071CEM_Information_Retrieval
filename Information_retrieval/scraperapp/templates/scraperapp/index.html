@@ -5,6 +5,10 @@
 </head>
 <body>
     <h1>Publication Search</h1>
+    <form id="scrapeForm" method="post" action="{% url 'scraperapp:scrape_and_index' %}">
+        {% csrf_token %}
+        <button type="submit" id="scrapeButton">Scrape Data</button>
+    </form>
     <form method="post">
         {% csrf_token %}
         {{ form }}
@@ -13,5 +17,8 @@
     {% if message %}
         <p>{{ message }}</p>
     {% endif %}
+    <br>
+    <br>
+    <a href="{% url 'document_clustering:cluster_form' %}"><button>Go to Document Clustering Form</button></a>
 </body>
 </html>
