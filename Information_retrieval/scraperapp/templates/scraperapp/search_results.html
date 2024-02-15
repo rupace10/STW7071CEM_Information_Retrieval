@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Publication Search Results</title>
+</head>
+<body>
+    <h1>Publication Search Results</h1>
+    {% if results %}
+        <ul>
+            {% for result in results %}
+                <li>
+                    <a href="{{ result.publication_link }}">{{ result.title }}</a>
+                    ({{ result.publication_year }}) - {{ result.authors }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+    
+    <!-- Add a home button -->
+    <a href="{% url 'scraperapp:index' %}">Home</a>
+</body>
+</html>
